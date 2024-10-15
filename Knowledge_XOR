@@ -1,14 +1,13 @@
- 
 
+package Test;
 
 public abstract class All_XOR {
 
     public static void main(String[] args) {
-        int x = 5;
-        int y=6;
+        int x = 5, y=6;
 
-        byte bt = 24;
-        System.out.println(bt += 10);
+
+
 
         /*
          * Để hiển thị 1 số XOR ta sử dụng Integer.toBinaryString(x) sẽ trả về kết quả dạng byte.
@@ -17,7 +16,19 @@ public abstract class All_XOR {
 
 
         /*
-        * So sánh 2 số trong XOR ta sử dụng toán tử [&]
+         * Thao tác với XOR[^] của 2 số trong bit (So sánh)
+         *
+         *
+         *   System.out.println(Integer.toBinaryString(x));     // 101
+         *   System.out.println(Integer.toBinaryString(y));     // 110
+         *   System.out.println(Integer.toBinaryString(x^y));   // 011
+         *
+         *   Nếu trong vị trí đang so sánh là x[i] == y[i] sẽ trả về 0,
+         *                                 Những giá trị x[i] = 1 Hoặc y[i] = 1 kết quả sẽ là 1
+         */
+
+        /*
+        *  Thao tác với AND[&] của 2 số trong bit
         *
         *   System.out.println(Integer.toBinaryString(x));
         *   System.out.println(Integer.toBinaryString(y));
@@ -26,6 +37,9 @@ public abstract class All_XOR {
         *   Nếu trong vị trí đang so sánh là x[i] == y[i] == 1 sẽ trả về 1,
         *                                 tất cả trường hợp còn lại trả về 0,
         */
+
+ 
+
 
         /*
          * Toán tử OR[|]
@@ -100,5 +114,8 @@ public abstract class All_XOR {
 
 
     }
+
+}
+
 
 }
