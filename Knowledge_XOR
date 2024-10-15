@@ -1,0 +1,104 @@
+ 
+
+
+public abstract class All_XOR {
+
+    public static void main(String[] args) {
+        int x = 5;
+        int y=6;
+
+        byte bt = 24;
+        System.out.println(bt += 10);
+
+        /*
+         * Để hiển thị 1 số XOR ta sử dụng Integer.toBinaryString(x) sẽ trả về kết quả dạng byte.
+         */
+//        Integer.toBinaryString(x);
+
+
+        /*
+        * So sánh 2 số trong XOR ta sử dụng toán tử [&]
+        *
+        *   System.out.println(Integer.toBinaryString(x));
+        *   System.out.println(Integer.toBinaryString(y));
+        *   System.out.println(Integer.toBinaryString(x&y));
+        *
+        *   Nếu trong vị trí đang so sánh là x[i] == y[i] == 1 sẽ trả về 1,
+        *                                 tất cả trường hợp còn lại trả về 0,
+        */
+
+        /*
+         * Toán tử OR[|]
+         *   System.out.println(Integer.toBinaryString(x));
+         *   System.out.println(Integer.toBinaryString(y));
+         *   System.out.println(Integer.toBinaryString(x|y));
+         *
+         * Tương tự như [&] nhưng khác ở chỗ só sánh để lấy giá trị số 1
+         *  Cụ thể ví dụ x[i] == 1 hoặc y[i] == 1 thì kết quả trả ra tại vị trí đó sẽ là 1,
+         *           nếu không sẽ trả về là 0.
+         */
+
+
+        /*
+         * Toán tử đảo ngược 1 số XOR[~] Integer.toBinaryString(x) sẽ trả về kết quả
+         * System.out.println(Integer.toBinaryString(28)); // 00011100
+         * System.out.println(Integer.toBinaryString(~x)); // (1..)111000111
+         */
+
+
+        /*
+         * Shift leaf [<<] di chuyển vị trí những số cuối cùng của XOR đến vị trí bao nhêu:
+         * Ví dụ : XOR của 5 là : 00000000 00000000 00000000 00000101
+         *                 5<<3 : 00000000 00000000 00000000 00101000
+         *                                                        321 Số 101 đã được đưa lên vị trí thứ 3.
+         * Chú ý 1 : Để hiển thị số đã di chuyển ta có công thức là số muốn XOR * 2 ^ số di chuyển.
+         *  ví dụ :  5<<3 = 5*Math.pow(2,3) = 40.
+         *
+         * Chú ý tất cả các kiểu XOR đều lấy giá trị nguyên thủy là int (32 bit) nên khi
+         * ta di chuyển vượt quá 32 ví dụ (5<<35) thì sẽ lấy số hiệu của số nhập trừ đi 32
+         * Ví dụ 5<<35 = 53-32 = 3 -> kết quả là  5<<3.
+         */
+
+
+
+        /*
+         * Để biểu diễn 1 số XOR thành số âm.
+         * Đầu tiên ta sẽ [~] đảo ngược số đó.
+         * Sau khi đảo ngược +1 sẽ ra được số âm.
+         *
+         * System.out.println(Integer.toBinaryString(28)); //11100
+         * System.out.println(Integer.toBinaryString(~28+1)); // 11111111111111111111111111100100
+         * System.out.println(Integer.toBinaryString(-28));   // 11111111111111111111111111100100
+         */
+
+        /*
+         * Signed Right Shift
+         * Tương tự như signed leaf shift thì sẽ dịch chuyển số bit qua n đơn vị.
+         * Lưu ý là OXR luôn giữ nguyên giá trị âm(-) hoặc  dương(+) của số.
+         *
+         * Còn cách tính thì sẽ chia ra 2 loại :
+         *
+         * 1 .Đối với số CHẲN ví dụ là 8 : 00001000
+         *      Sau khi 8>>2 : sẽ là  : 00000010
+         *      kết quả số SỐ NHỊ PHÂN là 2 :
+         *    *Cách tính : số ban đầu / Math.pow(2,n)
+         *                  8/Math.pow(2,2) = 2 .
+         *      int n = 8>>2; sout(n) // 2
+         *      System.out.println(Integer.toBinaryString(8>>2)); sẽ hiển thị số thập phân là 10
+         *
+         * 2.Đối với số LẼ ví dụ là 9 : 00001001
+         *      sau khi 9>>2 sẽ là :        00000010 . (Xóa hẳn 2 số sau luôn)
+         *      Kết quả số nhị phân cũng sẽ là 2.
+         *     *Cách tính : số bang đầu +1 / Math.pow(2,n)
+         *                  (9+1)/Math.pow(2,2)
+         *   int n = 9>>2; sout(n) // 2
+         *   System.out.println(Integer.toBinaryString(9>>2)); sẽ hiển thị số thập phân là 10
+         *
+         */
+
+
+
+
+    }
+
+}
