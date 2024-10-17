@@ -6,8 +6,14 @@ public abstract class All_XOR {
     public static void main(String[] args) {
         int x = 5, y=6;
 
-
-
+        /*
+         *Để biểu diễn 1 số bit thành số nguyên ta sử dụng 
+         *
+         * String a = "00001000";
+         * int number = Integer.parseInt(a, 2) //  Tham số thứ hai là 2 để chỉ định rằng chuỗi đó được hiểu là biểu diễn nhị phân.
+         *  System.out.println(number); // kết quả ra 8
+         *
+        */
 
         /*
          * Để hiển thị 1 số XOR ta sử dụng Integer.toBinaryString(x) sẽ trả về kết quả dạng byte.
