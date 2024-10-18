@@ -1,0 +1,40 @@
+package javaPractive;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class SubArray {
+    public static void main(String[] args) {
+        List<Integer> a = new ArrayList<>(Arrays.asList(1, -2 ,4 ,-5 ,1));
+        System.out.println(negativeNumber(a));
+    }
+
+    public static int negativeNumber(List<Integer> arr){
+        int count = 0, j=0,k=0, size = arr.size();
+
+        while (k<size){
+            j=0;
+            while (j< size){
+                int tempNegative=0;
+                List<Integer> sub = arr.subList(k,size-j);
+                for(Integer i : sub){
+                    tempNegative += i;
+                }
+                if(tempNegative <0) {
+                    count++;
+                    System.out.println("size"  +sub.size() );
+                    for(Integer i : sub){
+                        System.out.print(i+" ") ;
+
+                    }
+                    System.out.println();
+                }
+                j++;
+                if((size-j)<k) j=size;
+            }
+        k++;
+        }
+        return count;
+    }
+}
