@@ -1,0 +1,43 @@
+package javaPractive.LinkerList;
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+
+
+public static void main(String[] args) {
+
+        ListNote note1 = new ListNote(2, new ListNote(4, new ListNote(3, null)));
+        ListNote note2 = new ListNote(5, new ListNote(6, new ListNote(4, null)));
+        ListNote result = addTwoNumbers(note1, note2);
+}
+
+public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode tempListNode = new ListNode(0);
+        ListNode carry = tempListNode;
+        int current = 0;
+        while(l1 != null || l2!=null || current == 1){
+        int sum =0;
+            if(l1 != null){
+                sum += l1.val;
+                l1 = l1.next;
+            }
+            if(l2 != null){
+                sum += l2.val;
+                l2 = l2.next;
+            }
+            sum += current; 
+            current = sum/10;
+            ListNode node = new ListNode(sum%10);
+            carry.next = node;
+            carry = carry.next;
+        }
+        return tempListNode.next;
+    }
