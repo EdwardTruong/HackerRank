@@ -1,0 +1,39 @@
+public class LargerNumber {
+
+    public static void main(String[] args) {
+      //  System.out.println("LargerNumber :  "+ lagerNumber(224,4));
+      //  System.out.println("LargerNumber :  "+ lagerNumber(4244,3));
+        System.out.println("LargerNumber :  "+ lagerNumber(-913,4));
+    }
+
+    public static int largerNumber(int n, int m) {
+        String number = String.valueOf(n);
+        String addNumber = String.valueOf(m);
+        int maxNumber = 0;
+
+        if (n < 0) {
+            String numberBefore = number.substring(0, 1) + addNumber + number.substring(1);
+            maxNumber = Integer.parseInt(numberBefore);
+        } else {
+            maxNumber = Integer.parseInt(addNumber + number);
+        }
+
+        int i = (n >= 0) ? 1 : 2;
+
+        while (i <= number.length()) {
+            String firstCut = number.substring(0, i);
+            String subString = number.substring(i);
+
+            String completeStringNum = firstCut + addNumber + subString;
+            int completeNumber = Integer.parseInt(completeStringNum);
+
+            if (completeNumber >= maxNumber) {
+                maxNumber = completeNumber;
+            }
+
+            i++;
+        }
+
+        return maxNumber;
+    }
+}
