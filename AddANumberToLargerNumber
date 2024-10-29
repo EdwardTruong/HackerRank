@@ -1,9 +1,9 @@
 public class LargerNumber {
 
     public static void main(String[] args) {
-      //  System.out.println("LargerNumber :  "+ lagerNumber(224,4));
-      //  System.out.println("LargerNumber :  "+ lagerNumber(4244,3));
-        System.out.println("LargerNumber :  "+ lagerNumber(-913,4));
+      //  System.out.println("LargerNumber :  "+ lagerNumber(224,3)); // 3224 
+      //  System.out.println("LargerNumber :  "+ lagerNumber(4244,3)); // 43244
+        System.out.println("LargerNumber :  "+ lagerNumber(-913,4)); // -4913
     }
 
     public static int largerNumber(int n, int m) {
